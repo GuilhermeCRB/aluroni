@@ -8,6 +8,7 @@ import Filters from './Filters';
 
 export default function Carte() {
   const [search, setSearch] = useState('');
+  const [filter, setFilter] = useState<number | null>(null);
 
   return (
     <main>
@@ -19,7 +20,7 @@ export default function Carte() {
         <h3 className={styles.carte__title}>Cardápio</h3>
         <SearchBar search={search} setSearch={setSearch} />
         <div className={styles.cardapio__filters}>
-          <Filters />
+          <Filters filter={filter} setFilter={setFilter} />
         </div>
       </section>
     </main>
