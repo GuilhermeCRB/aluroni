@@ -12,6 +12,7 @@ interface Props {
 export default function OrderBy({ orderBy, setOrderBy }: Props) {
   const [open, setOpen] = useState(false);
   const nameOrderBy = orderBy && options.find((option) => option.value === orderBy)?.name;
+
   return (
     <button
       className={classNames({
@@ -30,7 +31,7 @@ export default function OrderBy({ orderBy, setOrderBy }: Props) {
         })}
       >
         {options.map((option) => (
-          <div className={styles.orderBy__options} key={option.value} onClick={() => setOrderBy(option.value)}>
+          <div className={styles.orderBy__option} key={option.value} onClick={() => setOrderBy(option.value)}>
             {option.name}
           </div>
         ))}
