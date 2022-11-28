@@ -6,7 +6,7 @@ export default function ItemsList() {
   return (
     <div className={styles.items}>
       {carte.map((item) => (
-        <Item key={item.id} />
+        <Item key={item.id} {...item} />
       ))}
     </div>
   );

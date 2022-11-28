@@ -1,22 +1,31 @@
-import logo from 'assets/logo.svg';
 import styles from './Item.module.scss';
+import carte from '../items.json';
+import classNames from 'classnames';
 
-export default function Item() {
+type Props = typeof carte[0];
+
+export default function Item(props: Props) {
+  const { title, description, category, size, serving, price, photo } = props;
+
   return (
     <div className={styles.item}>
       <div className={styles.item__image}>
-        <img src={logo} alt="imagem" />
+        <img src={photo} alt="imagem" />
       </div>
       <div className={styles.item__description}>
         <div className={styles.item__title}>
-          <h2> Macarrão </h2>
-          <p> Descrição do macarrão </p>
+          <h2> {title} </h2>
+          <p> {description} </p>
         </div>
         <div className={styles.item__tags}>
-          <div className={styles.item__type}>Massa</div>
-          <div className={styles.item__portion}>400g</div>
-          <div className={styles.item__qtdpeople}>Serve 2 pessoas</div>
-          <div className={styles.item__price}>R$ 50</div>
+          <div className={classNames([styles.item__type], [styles[`item__type__${category.label.toLowerCase()}`]])}>
+            {category.label}
+          </div>
+          <div className={styles.item__portion}>{size}g</div>
+          <div className={styles.item__qtdpeople}>
+            Serve {serving} pessoa{serving === 1 ? '' : 's'}
+          </div>
+          <div className={styles.item__price}>R$ {price.toFixed(2)}</div>
         </div>
       </div>
     </div>

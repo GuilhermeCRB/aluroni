@@ -71,18 +71,18 @@ $vegan: #80aa40;
     height: 40px;
     justify-content: center;
     padding: 10px 30px;
-    &__pasta {
+    &__massas {
       background-color: $pasta;
       color: white;
     }
-    &__meat {
+    &__carnes {
       background-color: $meat;
       color: white;
     }
     &__combos {
       background-color: $combos;
     }
-    &__vegan {
+    &__veganos {
       background-color: $vegan;
     }
   }
