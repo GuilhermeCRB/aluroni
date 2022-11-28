@@ -33,6 +33,7 @@
   &__filters {
     align-items: center;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 30px;
