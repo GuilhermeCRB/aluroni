@@ -1,5 +1,5 @@
 import styles from './Carte.module.scss';
-import { ReactComponent as Logo } from '../../assets/logo.svg';
+import { ReactComponent as Logo } from 'assets/logo.svg';
 
 export default function Carte() {
   return (
