@@ -1,9 +1,12 @@
 import styles from './Carte.module.scss';
+import { ReactComponent as Logo } from '../../assets/logo.svg';
 
 export default function Carte() {
   return (
     <main>
-      <nav className="menu"></nav>
+      <nav className={styles.carte}>
+        <Logo />
+      </nav>
     </main>
   );
 }
