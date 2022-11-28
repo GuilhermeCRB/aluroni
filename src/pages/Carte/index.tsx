@@ -5,10 +5,12 @@ import styles from './Carte.module.scss';
 import Header from 'components/Header';
 import SearchBar from './SearchBar';
 import Filters from './Filters';
+import OrderBy from './OrderBy';
 
 export default function Carte() {
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState<number | null>(null);
+  const [orderBy, setOrderBy] = useState('');
 
   return (
     <main>
@@ -21,6 +23,7 @@ export default function Carte() {
         <SearchBar search={search} setSearch={setSearch} />
         <div className={styles.cardapio__filters}>
           <Filters filter={filter} setFilter={setFilter} />
+          <OrderBy orderBy={orderBy} setOrderBy={setOrderBy} />
         </div>
       </section>
     </main>
