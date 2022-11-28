@@ -4,9 +4,10 @@ import { ReactComponent as Logo } from 'assets/logo.svg';
 import styles from './Carte.module.scss';
 import Header from 'components/Header';
 import SearchBar from './SearchBar';
+import Filters from './Filters';
 
 export default function Carte() {
-  const [busca, setBusca] = useState('');
+  const [search, setSearch] = useState('');
 
   return (
     <main>
@@ -16,7 +17,10 @@ export default function Carte() {
       <Header />
       <section className={styles.carte}>
         <h3 className={styles.carte__title}>Cardápio</h3>
-        <SearchBar busca={busca} setBusca={setBusca} />
+        <SearchBar search={search} setSearch={setSearch} />
+        <div className={styles.cardapio__filters}>
+          <Filters />
+        </div>
       </section>
     </main>
   );
