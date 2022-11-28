@@ -1,5 +1,6 @@
 import styles from './Carte.module.scss';
 import { ReactComponent as Logo } from 'assets/logo.svg';
+import Header from 'components/Header';
 
 export default function Carte() {
   return (
@@ -7,9 +8,7 @@ export default function Carte() {
       <nav className={styles.carte}>
         <Logo />
       </nav>
-      <header className={styles.header}>
-        <div className={styles.header__text}>A casa do código e da massa</div>
-      </header>
+      <Header />
     </main>
   );
 }
