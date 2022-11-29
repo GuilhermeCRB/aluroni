@@ -1,10 +1,12 @@
+import { memo } from 'react';
+
 import styles from './Item.module.scss';
 import carte from '../items.json';
 import classNames from 'classnames';
 
 type Props = typeof carte[0];
 
-export default function Item(props: Props) {
+function Item(props: Props) {
   const { title, description, category, size, serving, price, photo } = props;
 
   return (
@@ -31,3 +33,5 @@ export default function Item(props: Props) {
     </div>
   );
 }
+
+export default memo(Item);
