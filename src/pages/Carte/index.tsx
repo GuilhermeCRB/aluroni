@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import styles from './Carte.module.scss';
+import stylesTheme from 'styles/Theme.module.scss';
 import SearchBar from './SearchBar';
 import Filters from './Filters';
 import OrderBy from './OrderBy';
@@ -15,7 +16,7 @@ export default function Carte() {
 
   return (
     <section className={styles.carte}>
-      <h3 className={styles.carte__title}>Cardápio</h3>
+      <h3 className={stylesTheme.title}>Cardápio</h3>
       <SearchBar search={search} setSearch={setSearch} />
       <div className={styles.carte__filters}>
         <Filters filter={filter} setFilter={setFilter} />
