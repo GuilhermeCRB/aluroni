@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
 import styles from './Item.module.scss';
-import carte from '../items.json';
+import carte from 'data/items.json';
 import classNames from 'classnames';
 
 type Props = typeof carte[0];

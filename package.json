@@ -15,6 +15,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
+    "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.3",
     "web-vitals": "^2.1.4"
@@ -31,84 +32,6 @@
       "react-app/jest"
     ]
   },
-  "rules": {
-    "react-hooks/exhaustive-deps": "off",
-    "react-hooks/rules-of-hooks": "off",
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": 0,
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
-    "comma-spacing": [
-      "error",
-      {
-        "before": false,
-        "after": true
-      }
-    ],
-    "semi-spacing": [
-      "error",
-      {
-        "before": false,
-        "after": true
-      }
-    ],
-    "object-curly-spacing": [
-      "error",
-      "always"
-    ],
-    "key-spacing": [
-      "error",
-      {
-        "beforeColon": false
-      }
-    ],
-    "padded-blocks": [
-      "error",
-      "never"
-    ],
-    "no-multiple-empty-lines": [
-      "error",
-      {
-        "max": 1
-      }
-    ],
-    "lines-between-class-members": [
-      "error",
-      "always",
-      {
-        "exceptAfterSingleLine": true
-      }
-    ],
-    "space-before-function-paren": [
-      "error",
-      "never"
-    ],
-    "space-before-blocks": [
-      "error",
-      "always"
-    ],
-    "eol-last": [
-      "error",
-      "always"
-    ],
-    "arrow-spacing": [
-      "error",
-      {
-        "before": true,
-        "after": true
-      }
-    ],
-    "no-console": "warn"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -122,6 +45,11 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.31.11",
     "sass": "^1.56.1",
     "typescript-plugin-css-modules": "^3.4.0"
   }
