@@ -12,7 +12,7 @@ interface Props {
 
 export default function ItemsList(props: Props) {
   const [list, setList] = useState(carte);
-  const { search, filter } = props;
+  const { search, filter, orderBy } = props;
 
   function testSearch(title: string) {
     const regex = new RegExp(search, 'i');
@@ -24,10 +24,21 @@ export default function ItemsList(props: Props) {
     return true;
   }
 
+  function orderList(newList: typeof carte) {
+    if (orderBy === 'porcao') orderPropertie(newList, 'size');
+    if (orderBy === 'qtd_pessoas') orderPropertie(newList, 'serving');
+    if (orderBy === 'preco') orderPropertie(newList, 'price');
+    return newList;
+  }
+
+  function orderPropertie(list: typeof carte, propertie: 'size' | 'serving' | 'price') {
+    return list.sort((a, b) => (a[propertie] > b[propertie] ? 1 : -1));
+  }
+
   useEffect(() => {
     const newList = carte.filter((item) => testSearch(item.title) && testFilter(item.category.id));
-    setList(newList);
-  }, [search, filter]);
+    setList(orderList(newList));
+  }, [search, filter, orderBy]);
 
   return (
     <div className={styles.items}>
