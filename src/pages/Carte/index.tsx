@@ -8,10 +8,12 @@ import Filters from './Filters';
 import OrderBy from './OrderBy';
 import ItemsList from './ItemsList';
 
+export type OrderByOptions = '' | 'size' | 'serving' | 'price';
+
 export default function Carte() {
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState<number | null>(null);
-  const [orderBy, setOrderBy] = useState('');
+  const [orderBy, setOrderBy] = useState<OrderByOptions>('');
 
   return (
     <main>

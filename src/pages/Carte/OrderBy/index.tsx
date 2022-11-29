@@ -3,10 +3,11 @@ import options from './options.json';
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
+import { OrderByOptions } from '..';
 
 interface Props {
-  orderBy: string;
-  setOrderBy: React.Dispatch<React.SetStateAction<string>>;
+  orderBy: OrderByOptions;
+  setOrderBy: React.Dispatch<React.SetStateAction<OrderByOptions>>;
 }
 
 export default function OrderBy({ orderBy, setOrderBy }: Props) {
@@ -31,7 +32,11 @@ export default function OrderBy({ orderBy, setOrderBy }: Props) {
         })}
       >
         {options.map((option) => (
-          <div className={styles.orderBy__option} key={option.value} onClick={() => setOrderBy(option.value)}>
+          <div
+            className={styles.orderBy__option}
+            key={option.value}
+            onClick={() => setOrderBy(option.value as OrderByOptions)}
+          >
             {option.name}
           </div>
         ))}
