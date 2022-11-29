@@ -26,7 +26,7 @@ export default function Carte() {
           <Filters filter={filter} setFilter={setFilter} />
           <OrderBy orderBy={orderBy} setOrderBy={setOrderBy} />
         </div>
-        <ItemsList />
+        <ItemsList search={search} filter={filter} orderBy={orderBy} />
       </section>
     </main>
   );
