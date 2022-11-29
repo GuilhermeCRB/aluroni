@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import styles from './Items.module.scss';
-import carte from './items.json';
+import carte from 'data/items.json';
 import Item from './Item';
 
 interface Props {
