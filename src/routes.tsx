@@ -7,6 +7,7 @@ import StandardPage from 'components/StandardPage';
 import About from 'pages/About';
 import Footer from 'components/Footer';
 import NotFound from 'pages/NotFound';
+import Dish from 'pages/Dish';
 
 export default function AppRouter() {
   return (
@@ -17,6 +18,7 @@ export default function AppRouter() {
           <Route index element={<Home />} />
           <Route path="/cardapio" element={<Carte />} />
           <Route path="/sobre" element={<About />} />
+          <Route path="prato/:id" element={<Dish />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
