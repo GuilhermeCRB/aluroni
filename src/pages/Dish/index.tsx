@@ -3,12 +3,13 @@ import { useNavigate, useParams } from 'react-router-dom';
 import carte from 'data/items.json';
 import styles from './Dish.module.scss';
 import DishTags from 'components/DishTags';
+import NotFound from 'pages/NotFound';
 
 export default function Dish() {
   const { id } = useParams();
   const navigate = useNavigate();
   const dish = carte.find((item) => item.id === Number(id));
-  if (!dish) return <></>;
+  if (!dish) return <NotFound />;
 
   return (
     <>
