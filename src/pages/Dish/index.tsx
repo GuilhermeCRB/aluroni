@@ -1,11 +1,13 @@
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import classNames from 'classnames';
 
+import carte from 'data/items.json';
 import styles from './Dish.module.scss';
 
 export default function Dish() {
-  const { state } = useLocation();
-  const dish = state;
+  const { id } = useParams();
+  const dish = carte.find((item) => item.id === Number(id));
+  if (!dish) return <></>;
 
   return (
     <>
