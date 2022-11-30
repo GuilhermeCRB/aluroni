@@ -1,16 +1,16 @@
 import { memo } from 'react';
+import { useNavigate } from 'react-router-dom';
 
+import { Dish } from 'types/Dish';
 import styles from './Item.module.scss';
-import carte from 'data/items.json';
-import classNames from 'classnames';
+import DishTags from 'components/DishTags';
 
-type Props = typeof carte[0];
-
-function Item(props: Props) {
-  const { title, description, category, size, serving, price, photo } = props;
+function Item(props: Dish) {
+  const { id, title, description, photo } = props;
+  const navigate = useNavigate();
 
   return (
-    <div className={styles.item}>
+    <div className={styles.item} onClick={() => navigate(`/prato/${id}`)}>
       <div className={styles.item__image}>
         <img src={photo} alt="imagem" />
       </div>
@@ -19,16 +19,7 @@ function Item(props: Props) {
           <h2> {title} </h2>
           <p> {description} </p>
         </div>
-        <div className={styles.item__tags}>
-          <div className={classNames([styles.item__type], [styles[`item__type__${category.label.toLowerCase()}`]])}>
-            {category.label}
-          </div>
-          <div className={styles.item__portion}>{size}g</div>
-          <div className={styles.item__qtdpeople}>
-            Serve {serving} pessoa{serving === 1 ? '' : 's'}
-          </div>
-          <div className={styles.item__price}>R$ {price.toFixed(2)}</div>
-        </div>
+        <DishTags {...props} />
       </div>
     </div>
   );

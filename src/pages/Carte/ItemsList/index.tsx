@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import styles from './Items.module.scss';
 import carte from 'data/items.json';
 import Item from './Item';
+import { Carte } from 'types/Dish';
 
 interface Props {
   search: string;
@@ -24,14 +25,14 @@ export default function ItemsList(props: Props) {
     return true;
   }
 
-  function orderList(newList: typeof carte) {
+  function orderList(newList: Carte) {
     if (orderBy === 'porcao') orderPropertie(newList, 'size');
     if (orderBy === 'qtd_pessoas') orderPropertie(newList, 'serving');
     if (orderBy === 'preco') orderPropertie(newList, 'price');
     return newList;
   }
 
-  function orderPropertie(list: typeof carte, propertie: 'size' | 'serving' | 'price') {
+  function orderPropertie(list: Carte, propertie: 'size' | 'serving' | 'price') {
     return list.sort((a, b) => (a[propertie] > b[propertie] ? 1 : -1));
   }
 
