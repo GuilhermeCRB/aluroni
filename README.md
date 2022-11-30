@@ -7,9 +7,11 @@
 
 ## Features
 
+- Displays sorted dishes and restaurant info.
 - Displays all dishes available.
 - Filters the dishes by name or type.
 - Orders the list as you wish.  
+- Displays an about us page.
 
 ## Built with
 
