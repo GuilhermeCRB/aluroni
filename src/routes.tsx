@@ -6,6 +6,7 @@ import Menu from 'components/Menu';
 import StandardPage from 'components/StandardPage';
 import About from 'pages/About';
 import Footer from 'components/Footer';
+import NotFound from 'pages/NotFound';
 
 export default function AppRouter() {
   return (
@@ -17,6 +18,7 @@ export default function AppRouter() {
           <Route path="/cardapio" element={<Carte />} />
           <Route path="/sobre" element={<About />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>
