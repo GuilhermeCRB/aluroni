@@ -11,18 +11,20 @@ import Dish from 'pages/Dish';
 
 export default function AppRouter() {
   return (
-    <Router>
-      <Menu />
-      <Routes>
-        <Route path="/" element={<StandardPage />}>
-          <Route index element={<Home />} />
-          <Route path="/cardapio" element={<Carte />} />
-          <Route path="/sobre" element={<About />} />
-          <Route path="prato/:id" element={<Dish />} />
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <main className="container">
+      <Router>
+        <Menu />
+        <Routes>
+          <Route path="/" element={<StandardPage />}>
+            <Route index element={<Home />} />
+            <Route path="/cardapio" element={<Carte />} />
+            <Route path="/sobre" element={<About />} />
+            <Route path="prato/:id" element={<Dish />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </main>
   );
 }

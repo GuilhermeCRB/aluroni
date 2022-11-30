@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import carte from 'data/items.json';
 import nossaCasa from 'assets/nossa_casa.png';
 import stylesTheme from 'styles/Theme.module.scss';
@@ -6,6 +8,11 @@ import styles from './Home.module.scss';
 export default function Home() {
   let recommendedDishes = [...carte];
   recommendedDishes = recommendedDishes.sort(() => 0.5 - Math.random()).splice(0, 3);
+  const navigate = useNavigate();
+
+  function redirectToDishPage(item: typeof carte[0]) {
+    navigate(`/prato/${item.id}`, { state: { ...item } });
+  }
 
   return (
     <section>
@@ -16,7 +23,9 @@ export default function Home() {
             <div className={styles.recommendation__imag}>
               <img src={item.photo} alt={item.title} />
             </div>
-            <button className={styles.recommendation__button}>Ver mais</button>
+            <button className={styles.recommendation__button} onClick={() => redirectToDishPage(item)}>
+              Ver mais
+            </button>
           </div>
         ))}
       </div>
