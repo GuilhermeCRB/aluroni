@@ -4,6 +4,7 @@ import carte from 'data/items.json';
 import styles from './Dish.module.scss';
 import DishTags from 'components/DishTags';
 import NotFound from 'pages/NotFound';
+import StandardPage from 'components/StandardPage';
 
 export default function Dish() {
   const { id } = useParams();
@@ -12,7 +13,7 @@ export default function Dish() {
   if (!dish) return <NotFound />;
 
   return (
-    <>
+    <StandardPage>
       <button className={styles.back} onClick={() => navigate(-1)}>
         {'< Voltar'}
       </button>
@@ -26,6 +27,6 @@ export default function Dish() {
           <DishTags {...dish} />
         </div>
       </section>
-    </>
+    </StandardPage>
   );
 }
