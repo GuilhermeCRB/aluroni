@@ -20,7 +20,7 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <h3> Nossa casa </h3>
+      <h3 className={stylesTheme.title}> Nossa casa </h3>
       <div className={styles.we}>
         <img src={nossaCasa} alt="Casa do aluroni" />
         <div className={styles.we__address}>
