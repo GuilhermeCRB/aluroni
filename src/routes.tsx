@@ -5,6 +5,7 @@ import Carte from 'pages/Carte';
 import Menu from 'components/Menu';
 import StandardPage from 'components/StandardPage';
 import About from 'pages/About';
+import Footer from 'components/Footer';
 
 export default function AppRouter() {
   return (
@@ -17,6 +18,7 @@ export default function AppRouter() {
           <Route path="/sobre" element={<About />} />
         </Route>
       </Routes>
+      <Footer />
     </Router>
   );
 }
