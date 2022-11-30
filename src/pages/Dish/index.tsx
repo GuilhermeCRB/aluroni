@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import classNames from 'classnames';
 
 import carte from 'data/items.json';
 import styles from './Dish.module.scss';
+import DishTags from 'components/DishTags';
 
 export default function Dish() {
   const { id } = useParams();
@@ -22,18 +22,7 @@ export default function Dish() {
         </div>
         <div className={styles.content}>
           <p className={styles.contento__description}>{dish.description}</p>
-          <div className={styles.tags}>
-            <div
-              className={classNames([styles.tags__type], [styles[`tags__type__${dish.category.label.toLowerCase()}`]])}
-            >
-              {dish.category.label}
-            </div>
-            <div className={styles.tags__portion}>{dish.size}g</div>
-            <div className={styles.tags__qtdpeople}>
-              Serve {dish.serving} pessoa {dish.serving == 1 ? '' : 's'}
-            </div>
-            <div className={styles.tags__price}>R$ {dish.price.toFixed(2)}</div>
-          </div>
+          <DishTags {...dish} />
         </div>
       </section>
     </>
