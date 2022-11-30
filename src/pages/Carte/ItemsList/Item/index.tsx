@@ -1,12 +1,10 @@
 import { memo } from 'react';
 
+import { Dish } from 'types/Dish';
 import styles from './Item.module.scss';
-import carte from 'data/items.json';
 import classNames from 'classnames';
 
-type Props = typeof carte[0];
-
-function Item(props: Props) {
+function Item(props: Dish) {
   const { title, description, category, size, serving, price, photo } = props;
 
   return (
